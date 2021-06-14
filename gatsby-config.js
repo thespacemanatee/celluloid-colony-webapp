@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'celluloid-colony-webapp',
+    siteUrl: 'https://celluloidcolony08563.gatsbyjs.io/',
   },
   plugins: [
     'gatsby-plugin-gatsby-cloud',
