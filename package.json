@@ -13,7 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint": "eslint ./src"
+    "lint": "eslint . --ext .js,.ts,.tsx"
   },
   "dependencies": {
     "@deck.gl/core": "^8.4.17",
@@ -45,6 +45,7 @@
     "autoprefixer": "^10.2.6",
     "eslint": "^7.28.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",

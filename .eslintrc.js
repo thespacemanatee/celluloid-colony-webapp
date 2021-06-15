@@ -23,7 +23,6 @@ module.exports = {
     'import',
     'react',
     'react-hooks',
-    'react-native',
     'prettier',
     '@typescript-eslint',
   ],

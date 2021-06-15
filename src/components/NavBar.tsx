@@ -1,21 +1,34 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'gatsby';
 
-interface NavBarProps {
-  toggle: () => void;
-}
+interface NavBarProps {}
 
-const NavBar = ({ toggle }: NavBarProps) => {
+const NavBar = () => {
+  useEffect(() => {
+    const btn = document.querySelector('#navbar-dropdown-btn');
+    const dropDown = document.querySelector('#navbar-dropdown');
+
+    btn?.addEventListener('click', () => {
+      dropDown?.classList.toggle('-translate-y-full');
+    });
+
+    return () => {
+      btn?.removeEventListener('click', () => {
+        dropDown?.classList.toggle('-translate-y-full');
+      });
+    };
+  });
+
   return (
     <>
       <nav
-        className="flex justify-between items-center h-16 bg-white text-black relative shadow-sm font-mono"
+        className="flex justify-between items-center h-16 bg-white text-black relative shadow-md font-body z-10"
         role="navigation"
       >
-        <Link to="/" className="pl-8">
+        <Link to="/" className="pl-8 font-semibold">
           Celluloid Colony
         </Link>
-        <div className="px-4 cursor-pointer md:hidden" onClick={toggle}>
+        <button id="navbar-dropdown-btn" className="px-3 py-3 md:hidden">
           <svg
             className="w-6 h-6"
             fill="none"
@@ -30,7 +43,7 @@ const NavBar = ({ toggle }: NavBarProps) => {
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
-        </div>
+        </button>
         <div className="pr-8 md:block hidden">
           <Link className="p-4" to="/">
             Home
