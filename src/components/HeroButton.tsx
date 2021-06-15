@@ -1,8 +1,7 @@
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import React from 'react';
 
-const HeroButton = () => {
-  return (
+const HeroButton = () => (
     <AnchorLink
       to="/#main-map"
       className="py-3 px-5 md:py-6 md:px-10 bg-gray-500 rounded-full text-1xl md:text-2xl lg:text-3xl text-white hover:bg-gray-400 transition duration-300 ease-in-out flex items-center animate-bounce shadow-lg"
@@ -24,6 +23,5 @@ const HeroButton = () => {
       </svg>
     </AnchorLink>
   );
-};
 
 export default HeroButton;

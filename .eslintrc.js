@@ -5,7 +5,7 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'airbnb',
+    'airbnb-typescript',
     'prettier',
     'plugin:import/errors',
     'plugin:import/warnings',
@@ -13,19 +13,14 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    project: './tsconfig.json',
     ecmaFeatures: {
       jsx: true,
     },
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: [
-    'import',
-    'react',
-    'react-hooks',
-    'prettier',
-    '@typescript-eslint',
-  ],
+  plugins: ['import', 'react', 'react-hooks', 'prettier', '@typescript-eslint'],
   rules: {
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],

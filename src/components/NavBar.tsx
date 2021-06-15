@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'gatsby';
-
-interface NavBarProps {}
 
 const NavBar = () => {
   useEffect(() => {
@@ -28,7 +26,11 @@ const NavBar = () => {
         <Link to="/" className="pl-8 font-semibold">
           Celluloid Colony
         </Link>
-        <button id="navbar-dropdown-btn" className="px-3 py-3 md:hidden">
+        <button
+          type="button"
+          id="navbar-dropdown-btn"
+          className="px-3 py-3 md:hidden"
+        >
           <svg
             className="w-6 h-6"
             fill="none"

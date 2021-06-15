@@ -6,8 +6,7 @@ import NavBar from '../../components/NavBar';
 
 interface ContainerProps {}
 
-const Container: React.FC<ContainerProps> = ({ children }) => {
-  return (
+const Container: React.FC<ContainerProps> = ({ children }) => (
     <>
       <NavBar />
       <Dropdown />
@@ -15,6 +14,5 @@ const Container: React.FC<ContainerProps> = ({ children }) => {
       <Footer />
     </>
   );
-};
 
 export default Container;
