@@ -6,7 +6,9 @@ const ContactPage = () => {
   return (
     <Container>
       <div className="h-screen flex justify-center items-center bg-blue-300">
-        <h1 className="text-9xl uppercase font-black text-center">Contact Page</h1>
+        <h1 className="text-5xl md:text-7xl lg:text-9xl uppercase font-black text-center">
+          Contact Page
+        </h1>
       </div>
     </Container>
   );

@@ -5,7 +5,7 @@ const HeroButton = () => {
   return (
     <AnchorLink
       to="/#main-map"
-      className="py-3 px-5 md:py-6 md:px-10 bg-yellow-500 rounded-full lg:text-3xl md:text-2xl sm:text-1xl hover:bg-yellow-300 transition duration-300 ease-in-out flex items-center animate-bounce shadow-lg"
+      className="py-3 px-5 md:py-6 md:px-10 bg-yellow-500 rounded-full text-1xl md:text-2xl lg:text-3xl hover:bg-yellow-300 transition duration-300 ease-in-out flex items-center animate-bounce shadow-lg"
     >
       Start Now
       <svg
