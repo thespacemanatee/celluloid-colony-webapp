@@ -20,6 +20,8 @@
     "@deck.gl/layers": "^8.4.17",
     "@deck.gl/mapbox": "^8.4.17",
     "@deck.gl/react": "^8.4.17",
+    "@headlessui/react": "^1.2.0",
+    "@heroicons/react": "^1.0.1",
     "axios": "^0.21.1",
     "gatsby": "^3.6.2",
     "gatsby-plugin-anchor-links": "^1.2.1",
