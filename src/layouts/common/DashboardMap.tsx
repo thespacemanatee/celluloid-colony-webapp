@@ -4,24 +4,19 @@ import { MapboxLayer } from '@deck.gl/mapbox';
 import { GeoJsonLayer } from '@deck.gl/layers';
 import { StaticMap } from 'react-map-gl';
 
-const INITIAL_VIEW_STATE = {
-  latitude: -6.235643229783223,
-  longitude: 106.83187921798928,
-  zoom: 5,
-  minZoom: 5,
-  pitch: 0,
-  bearing: 0,
-};
+import { GeoJsonData } from '../../types';
 
-type GeoJsonData = {
-  cartodb_id: number;
-  country: string;
-  id_1: number;
-  slug: string;
-  state: string;
-};
+import {
+  INITIAL_VIEW_STATE,
+  MAP_CONTROLLER_CONFIG,
+  MAP_THEME,
+} from '../../config';
 
-const DashboardMap = ({ borders }: { borders: string }) => {
+interface DashboardMapProps {
+  borders: string;
+}
+
+const DashboardMap = ({ borders }: DashboardMapProps) => {
   const [glContext, setGLContext] = useState();
   const [selectedArea, setSelectedArea] = useState<GeoJsonData>();
   const deckRef = useRef<any>(null);
@@ -44,7 +39,6 @@ const DashboardMap = ({ borders }: { borders: string }) => {
       lineWidthMinPixels: 3,
       extruded: false,
       getFillColor: (f: any) => {
-        console.log(f.properties);
         if (
           selectedArea &&
           f.properties.cartodb_id === selectedArea?.cartodb_id
@@ -71,7 +65,7 @@ const DashboardMap = ({ borders }: { borders: string }) => {
       ref={deckRef}
       layers={layers}
       initialViewState={INITIAL_VIEW_STATE}
-      controller
+      controller={MAP_CONTROLLER_CONFIG}
       onWebGLInitialized={setGLContext}
       glOptions={{
         stencil: true,
@@ -82,7 +76,7 @@ const DashboardMap = ({ borders }: { borders: string }) => {
           <StaticMap
             ref={mapRef}
             gl={glContext}
-            mapStyle="mapbox://styles/mapbox/light-v9"
+            mapStyle={MAP_THEME}
             mapboxApiAccessToken={process.env.GATSBY_MAPBOX_ACCESS_TOKEN}
             onLoad={onMapLoad}
           />
