@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
-import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { GeoJsonData } from '../../types';
 
