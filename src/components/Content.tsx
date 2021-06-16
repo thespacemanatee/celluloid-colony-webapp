@@ -3,11 +3,11 @@ import { ArrowUpIcon } from '@heroicons/react/solid';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 import borders from '../data/indonesia-en.json';
-import DashboardMap from '../layouts/common/DashboardMap';
+import TestMap from '../layouts/common/DashboardMap';
 
 const Content = () => (
   <main id="main-map" className="relative h-screen">
-    <DashboardMap borders={borders} />
+    <TestMap borders={borders} />
     <div className="flex absolute bottom-5 justify-center inset-x-0 z-10">
       <AnchorLink
         to="/#main-hero"
