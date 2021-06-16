@@ -61,17 +61,17 @@ const DashboardMap = ({ borders }: DashboardMapProps) => {
           selectedArea &&
           f.properties.cartodb_id === selectedArea?.cartodb_id
         ) {
-          return [25, 116, 210, 255];
+          return [25, 116, 210, 155];
         }
-        return [212, 218, 220, 255];
+        return [212, 218, 220, 100];
       },
       updateTriggers: {
         getFillColor: [selectedArea ? selectedArea?.cartodb_id : null],
       },
-      getLineColor: [29, 161, 242],
+      getLineColor: [29, 161, 242, 255],
       pickable: true,
       autoHighlight: true,
-      highlightColor: [142, 223, 255],
+      highlightColor: [142, 223, 255, 155],
       onClick: (e: any) => {
         setSelectedArea(e.object.properties);
       },
