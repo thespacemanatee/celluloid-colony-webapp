@@ -33,9 +33,14 @@ export default function NavBarMenu() {
 
   return (
     <Menu as="div" className="relative inline-block text-left">
-      <div className="md:hidden">
-        <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white rounded-md bg-opacity-20">
-          <button type="button" onClick={handleMenuClick}>
+      <div className="mr-2 md:hidden">
+        <Menu.Button className="inline-flex justify-center w-full h-full my-2 text-sm font-medium text-white rounded-md bg-opacity-20">
+          <button
+            type="button"
+            aria-label="navbar-button"
+            onClick={handleMenuClick}
+            className="w-full h-full"
+          >
             <MenuIcon className="w-6 h-6 text-black" aria-hidden="true" />
           </button>
         </Menu.Button>
@@ -80,7 +85,7 @@ export default function NavBarMenu() {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <div className="absolute top-0 left-0 -ml-8 pt-4 pr-2 flex sm:-ml-10 sm:pr-4">
+                    <div className="absolute top-0 left-0 -ml-8 pt-20 pr-2 flex sm:-ml-10 sm:pr-4">
                       <button
                         type="button"
                         className="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
@@ -91,7 +96,7 @@ export default function NavBarMenu() {
                       </button>
                     </div>
                   </Transition.Child>
-                  <div className="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll">
+                  <div className="h-full flex flex-col py-6 pt-20 bg-white shadow-xl overflow-y-scroll">
                     <div className="px-4 sm:px-6">
                       <Dialog.Title className="text-lg font-medium text-gray-900">
                         Menu

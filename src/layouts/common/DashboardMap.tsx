@@ -35,7 +35,6 @@ const DashboardMap = ({ borders }: DashboardMapProps) => {
 
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
-    // map.current.addControl(new mapboxgl.NavigationControl());
     map.current.on('move', () => {
       setLng(map.current.getCenter().lng.toFixed(4));
       setLat(map.current.getCenter().lat.toFixed(4));
@@ -60,7 +59,6 @@ const DashboardMap = ({ borders }: DashboardMapProps) => {
         source: 'states',
         layout: {},
         paint: {
-          //   'fill-color': '#627BC1',
           'fill-color': [
             'case',
             ['boolean', ['feature-state', 'clicked'], false],
@@ -133,6 +131,7 @@ const DashboardMap = ({ borders }: DashboardMapProps) => {
       });
       map.current.on('click', 'state-fills', (e) => {
         new mapboxgl.Popup({
+          // TODO: style this
           className: '',
         })
           .setLngLat(e.lngLat)

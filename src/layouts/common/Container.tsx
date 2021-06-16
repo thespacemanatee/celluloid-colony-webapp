@@ -3,13 +3,19 @@ import React from 'react';
 import Footer from '../../components/Footer';
 import NavBar from '../../components/NavBar';
 
-interface ContainerProps {}
+interface ContainerProps {
+  children: React.ReactNode;
+}
 
-const Container: React.FC<ContainerProps> = ({ children }) => (
+const Container = ({ children }: ContainerProps) => (
   <>
-    <NavBar />
-    {children}
-    <Footer />
+    <header className="sticky top-0 z-50">
+      <NavBar />
+    </header>
+    <main className="relative">{children}</main>
+    <footer>
+      <Footer />
+    </footer>
   </>
 );
 
