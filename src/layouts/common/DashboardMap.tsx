@@ -6,11 +6,20 @@ import { StaticMap } from 'react-map-gl';
 
 import { GeoJsonData } from '../../types';
 
-import {
-  INITIAL_VIEW_STATE,
-  MAP_CONTROLLER_CONFIG,
-  MAP_THEME,
-} from '../../config';
+export const INITIAL_VIEW_STATE = {
+  latitude: -4.235643229783223,
+  longitude: 120.83187921798928,
+  zoom: 4.5,
+  minZoom: 3,
+  maxZoom: 8,
+  pitch: 0,
+  bearing: 0,
+};
+
+export const MAP_CONTROLLER_CONFIG = {
+  // scrollZoom: false,
+  // doubleClickZoom: false,
+};
 
 interface DashboardMapProps {
   borders: string;
@@ -26,7 +35,16 @@ const DashboardMap = ({ borders }: DashboardMapProps) => {
     const map = mapRef.current.getMap();
     const { deck } = deckRef.current;
 
-    map.addLayer(new MapboxLayer({ id: 'my-map', deck }));
+    const { layers } = map.getStyle();
+    let firstSymbolId;
+    for (let i = 0; i < layers.length; i += 1) {
+      if (layers[i].type === 'symbol') {
+        firstSymbolId = layers[i].id;
+        break;
+      }
+    }
+
+    map.addLayer(new MapboxLayer({ id: 'geojson', deck }), firstSymbolId);
   }, []);
 
   const layers = [
@@ -76,7 +94,7 @@ const DashboardMap = ({ borders }: DashboardMapProps) => {
           <StaticMap
             ref={mapRef}
             gl={glContext}
-            mapStyle={MAP_THEME}
+            mapStyle="mapbox://styles/mapbox/light-v9"
             mapboxApiAccessToken={process.env.GATSBY_MAPBOX_ACCESS_TOKEN}
             onLoad={onMapLoad}
           />
