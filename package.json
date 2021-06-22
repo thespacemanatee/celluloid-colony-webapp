@@ -19,7 +19,7 @@
     "@headlessui/react": "^1.2.0",
     "@heroicons/react": "^1.0.1",
     "axios": "^0.21.1",
-    "gatsby": "^3.6.2",
+    "gatsby": "^3.7.2",
     "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-gatsby-cloud": "^2.7.1",
     "gatsby-plugin-image": "^1.7.1",
