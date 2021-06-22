@@ -16,7 +16,7 @@
     "lint": "eslint . --ext .js,.ts,.tsx"
   },
   "dependencies": {
-    "@headlessui/react": "^1.2.0",
+    "@headlessui/react": "^1.3.0",
     "@heroicons/react": "^1.0.1",
     "axios": "^0.21.1",
     "gatsby": "^3.7.2",
